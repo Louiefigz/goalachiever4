@@ -1,0 +1,22 @@
+angular
+ .module('app', ['ui.router', 'ngResource', 'templates', 'ngResource'])
+ .config(function($stateProvider, $urlRouterProvider) {
+   $stateProvider
+     .state('home', {
+       url: '/',
+       templateUrl: 'home.html',
+       controller: 'HomeController as ctrl'
+     })
+     .state('home.new', {
+       url: 'new',
+       templateUrl: 'home/new.html',
+       controller: 'NewGoalController as ctrl'
+     })
+     .state('home.goals', {
+       url: 'goals',
+       templateUrl: 'home/goals.html',
+       controller: 'GoalsController as ctrl'
+     });
+
+  $urlRouterProvider.otherwise('/');
+});
