@@ -6,9 +6,11 @@ module Api
       def index
         respond_with(Goal.all.order("id DESC"))
       end
+
       def show
         respond_with(Goal.find(params[:id]))
       end
+      
       def create
 
         @note = Goal.new(todo_params)
