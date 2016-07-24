@@ -3,8 +3,9 @@ angular
   .factory('Goal', Goal)
 function Goal($resource) {
 
-  console.log("Goal.js");
-  var Goal = $resource('http://localhost:3002/api/v1/goals/:id.json', {id: '@id'}, {
+
+  var Goal = $resource('http://localhost:3000/api/v1/goals/:id', {id: '@id'}, {
+
   update: { method: 'PUT' },
   post: { method: 'POST'},
   get: { method: 'GET'}

@@ -10,7 +10,8 @@ module Api
         respond_with(Goal.find(params[:id]))
       end
       def create
-        @note = Goal.new(note_params)
+
+        @note = Goal.new(todo_params)
         if @note.save
           respond_to do |format|
             format.json { render :json => @note }
@@ -31,7 +32,11 @@ module Api
       end
       private
         def todo_params
-          params.require(:goal).permit(:body) 
+          params.require(:goal).permit(:body)
+        end
+
+        def goal_params
+          params.requre(:goal).permit(:body)
         end
     end
   end
