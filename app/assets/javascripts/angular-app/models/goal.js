@@ -4,7 +4,7 @@ angular
 function Goal($resource) {
 
 
-  var Goal = $resource('http://localhost:3000/api/v1/goals/:id', {id: '@id'}, {
+  var Goal = $resource('http://localhost:3003/api/v1/goals/:id', {id: '@id'}, {
 
   update: { method: 'PUT' },
   post: { method: 'POST'},

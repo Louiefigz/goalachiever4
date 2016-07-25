@@ -7,7 +7,7 @@ function NewGoalController(Goal, $location) {
   // make a new note
   ctrl.goal = new Goal();
   ctrl.addGoal = function() {
-    debugger;
+  
     ctrl.goal.$save(function() {
       $location.path('goals');
     });

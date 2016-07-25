@@ -1,6 +1,7 @@
 angular
  .module('app', ['ui.router', 'ngResource', 'templates', 'ngResource', 'Devise'])
  .config(function($stateProvider, $urlRouterProvider, AuthProvider) {
+
    $stateProvider
      .state('home', {
        url: '/',
@@ -16,7 +17,11 @@ angular
        url: 'goals',
        templateUrl: 'home/goals.html',
        controller: 'GoalsController as ctrl'
-     });
+     })
+
+     
+
+
 
   $urlRouterProvider.otherwise('/');
 });
