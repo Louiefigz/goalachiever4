@@ -1,3 +1,4 @@
 class GoalSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :body
+  has_many :posts
 end

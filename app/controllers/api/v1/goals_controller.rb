@@ -10,7 +10,7 @@ module Api
       def show
         respond_with(Goal.find(params[:id]))
       end
-      
+
       def create
 
         @note = Goal.new(todo_params)
