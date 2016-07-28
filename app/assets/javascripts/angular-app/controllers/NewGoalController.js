@@ -16,8 +16,8 @@ function NewGoalController(GoalService, $location) {
 
 
     GoalService.Goals.save(ctrl.newGoal, function(resp){
+      $location.path('goals');
 
-    
     });
 
     // GoalService.Goals.post(function() {

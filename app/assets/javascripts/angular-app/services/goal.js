@@ -1,9 +1,9 @@
 
 function GoalService($resource) {
 
-  var Goals = $resource('http://localhost:3005/api/v1/goals');
+  var Goals = $resource('http://localhost:3000/api/v1/goals');
 
-  var Goal = $resource('http://localhost:3005/api/v1/goals/:id', {id: '@id'}, {
+  var Goal = $resource('http://localhost:3000/api/v1/goals/:id', {id: '@id'}, {
     update: { method: 'PUT' },
     delete: {method: 'DELETE'},
     get: { method: 'GET'}

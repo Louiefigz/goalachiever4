@@ -4,7 +4,12 @@ module Api
       skip_before_filter :verify_authenticity_token
       respond_to :json
       def index
-        respond_with(Goal.all.order("id DESC"))
+        @goals = Goal.all
+        respond_to do |format|
+          format.json { render :json => @goals }
+        end
+
+        # respond_with(Goal.all.order("id DESC"))
       end
 
       def show

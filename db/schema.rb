@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20160724233104) do
     t.text     "body"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "parent_id"
     t.integer  "goal_category_id"
+    t.integer  "parent_id"
     t.boolean  "completed"
   end
 
