@@ -1,7 +1,7 @@
 angular
   .module('app')
   .controller('GoalsController', GoalsController);
-function GoalsController(Goal) {
+function GoalsController(GoalService) {
   var ctrl = this;
-  ctrl.goals = Goal.query();
+  ctrl.goals = GoalService.query();
 }
