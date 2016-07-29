@@ -3,7 +3,8 @@ angular
   .controller('GoalsController', GoalsController);
 
 function GoalsController(GoalService, $resource) {
+  var ctrl = this;
   GoalService.getGoals().then(function(resp){
-    debugger;
+    ctrl.goals = resp.data.goals;
   })
 }

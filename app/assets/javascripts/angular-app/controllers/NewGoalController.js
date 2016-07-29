@@ -2,26 +2,18 @@ angular
   .module('app')
   .controller('NewGoalController', NewGoalController);
 
-function NewGoalController(GoalService, $location) {
+function NewGoalController(GoalService, $location, $state) {
   // we will use $location to route back to another state
   var ctrl = this;
   // make a new note
-  ctrl.newGoal = new GoalService.Goals();
+
 
   ctrl.addGoal = function(data) {
+  GoalService.postGoals(data).then(function(resp){
+    debugger;
+    $state.go('/goals');
+  })
 
-    ctrl.newGoal.goal = {};
-    ctrl.newGoal.goal.body = data;
 
-
-
-    GoalService.Goals.save(ctrl.newGoal, function(resp){
-      $location.path('goals');
-
-    });
-
-    // GoalService.Goals.post(function() {
-    //   $location.path('goals');
-    // });
   };
 }

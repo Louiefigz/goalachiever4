@@ -17,7 +17,7 @@ module Api
       end
 
       def create
-
+        
         @note = Goal.new(todo_params)
         if @note.save
           respond_to do |format|

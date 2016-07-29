@@ -4,12 +4,14 @@ angular
 
     this.makeAjaxCall = function(httpMethod, route, data){
          // Create deferred object with $q
+
          var deferred = $q.defer();
 
          // Make ajax call to user route and return data
          httpMethod(route, data).then(
            // Success callback - return data with user info
            function(resp){
+
              deferred.resolve(resp);
            // Error callback - return data with errors
          }, function(resp){
@@ -29,8 +31,18 @@ angular
       // var data = {params: {goals: goalsParams}}
 
       return this.makeAjaxCall(httpMethod, route);
-
     };
+
+    this.postGoals = function(goalsParams){
+      var httpMethod = $http.post;
+      var route = '/api/v1/goals';
+      var data = {
+        goal: {
+          body: goalsParams
+        }
+      }
+      return this.makeAjaxCall(httpMethod, route, data);
+    }
 
   }]);
 
