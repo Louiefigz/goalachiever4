@@ -10,7 +10,7 @@ angular
      })
      .state('home.new', {
        url: 'new',
-       templateUrl: 'home/new.html',
+       templateUrl: 'components/addGoalForm.html',
        controller: 'NewGoalController as ctrl'
      })
      .state('home.goals', {
@@ -19,7 +19,7 @@ angular
        controller: 'GoalsController as ctrl'
      })
 
-     
+
 
 
 

@@ -9,6 +9,7 @@ function NewGoalController(GoalService, $location, $state) {
 
 
   ctrl.addGoal = function(data) {
+  
   GoalService.postGoals(data).then(function(resp){
     // debugger;
     $state.go('home.goals');
