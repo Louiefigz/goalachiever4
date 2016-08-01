@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .service('GoalService', ['$http', '$q', function($http, $q){
+  .service('GoalService', ['$http', '$q',  function($http, $q){
 
     this.makeAjaxCall = function(httpMethod, route, data){
          // Create deferred object with $q
@@ -42,6 +42,14 @@ angular
         }
       }
       return this.makeAjaxCall(httpMethod, route, data);
+    }
+
+    var goalId = window.location.href.split('/')[window.location.href.split('/').length -1];
+
+    this.showGoal = function(){
+      var httpMethod = $http.get;
+      var route = '/api/v1/goals/' + goalId;
+      return this.makeAjaxCall(httpMethod, route);
     }
 
   }]);
