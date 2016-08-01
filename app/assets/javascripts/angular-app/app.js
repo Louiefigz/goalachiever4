@@ -18,6 +18,11 @@ angular
        templateUrl: 'home/goals.html',
        controller: 'GoalsController as ctrl'
      })
+     .state('home.goal', {
+       url: 'goals/:goalId',
+       templateUrl: 'home/goal.html',
+       controller: 'GoalsController as ctrl'
+     })
 
 
 

@@ -2,7 +2,7 @@ angular
   .module('app')
   .controller('GoalsController', GoalsController);
 
-function GoalsController(GoalService, $resource) {
+function GoalsController(GoalService, $resource, $scope) {
   var ctrl = this;
 
   ctrl.getGoals = function(){
@@ -14,10 +14,11 @@ function GoalsController(GoalService, $resource) {
 
   ctrl.addGoal = function(data) {
     GoalService.postGoals(data).then(function(resp){
-      // debugger;
       // ctrl.getGoals();
 
       ctrl.goals.push(resp.data.goal);
+      // debugger;
+
     });
   };
 

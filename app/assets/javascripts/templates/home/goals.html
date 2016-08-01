@@ -1,9 +1,10 @@
 <h1>Goals</h1>
 <ul>
-  <li ng-repeat="goal in ctrl.goals">
+  <li ng-repeat="goal in ctrl.goals" >
 
     <p>
-      {{ goal.body }}
+      <a ui-sref="home.goal({goalId: goal.id})">{{ goal.body }}</a>
+
 
     </p>
   </li>
