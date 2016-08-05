@@ -1,5 +1,16 @@
 <h1>Your Goal</h1>
-<ul>
-<li ng-repeat="goal in ctrl.goal"></li>
 
+<!-- <ul>
+<li ng-repeat="goal in ctrl.goal" >{{goal.body}}</li>
+</ul> -->
+
+{{ ctrl.goal.body }}
+
+
+<h2>Comments:</h2>
+<ul>
+<li ng-repeat="post in ctrl.goal.posts">
+  <p>{{post.content}}</p>
+
+</li>
 </ul>

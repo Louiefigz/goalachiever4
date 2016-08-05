@@ -2,7 +2,7 @@ angular
   .module('app')
   .controller('GoalsController', GoalsController);
 
-function GoalsController(GoalService, $resource, $scope, $rootScope) {
+function GoalsController($scope, $state, GoalService, $resource, $rootScope) {
   var ctrl = this;
 
   ctrl.getGoals = function(){
@@ -20,17 +20,22 @@ function GoalsController(GoalService, $resource, $scope, $rootScope) {
     });
   };
 
-  ctrl.getGoal = function(data) {
-    GoalService.showGoal(data).then(function(resp){
+  ctrl.getGoal = function(id) {
+    GoalService.showGoal(id).then(function(resp){
       // ctrl.getGoals();
+
+      ctrl.goal = resp.data.goal;
       debugger;
-      // ctrl.goal =
       // debugger;
     });
   };
 
-
+var goalId = window.location.href.split('/')[window.location.href.split('/').length -1];
   ctrl.getGoals();
+  //
+  if($state.current.name === "home.goal") {
 
+    ctrl.getGoal(goalId);
+  }
 
 }
