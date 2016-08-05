@@ -4,13 +4,14 @@
 <li ng-repeat="goal in ctrl.goal" >{{goal.body}}</li>
 </ul> -->
 
-{{ ctrl.goal.body }}
+<h1><center>{{ ctrl.goal.body }}</center></h1>
 
 
-<h2>Comments:</h2>
+<h2>Blog Posts:</h2>
 <ul>
-<li ng-repeat="post in ctrl.goal.posts">
+<div ng-repeat="post in ctrl.goal.posts">
+  <h2>{{post.name}}</h2>
   <p>{{post.content}}</p>
 
-</li>
+</div>
 </ul>

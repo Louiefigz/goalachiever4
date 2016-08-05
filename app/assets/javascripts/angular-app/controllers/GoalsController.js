@@ -25,7 +25,7 @@ function GoalsController($scope, $state, GoalService, $resource, $rootScope) {
       // ctrl.getGoals();
 
       ctrl.goal = resp.data.goal;
-      debugger;
+      // debugger;
       // debugger;
     });
   };

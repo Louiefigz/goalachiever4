@@ -24,8 +24,6 @@ angular
   }
 
 
-
-
   this.getGoals = function(){
     var httpMethod = $http.get;
     var route = '/api/v1/goals';
@@ -33,6 +31,11 @@ angular
 
     return this.makeAjaxCall(httpMethod, route);
   };
+
+
+
+
+
 
   this.postGoals = function(goalsParams){
     var httpMethod = $http.post;
