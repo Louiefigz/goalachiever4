@@ -8,6 +8,7 @@ function PostsController($scope, $state, PostService, $resource, $rootScope) {
 
 
   this.addPost = function(data) {
+    debugger;
     PostService.createPosts(data).then(function(resp){
       // ctrl.getGoals();
       debugger;

@@ -24,7 +24,8 @@ angular
   }
 
 
-  this.createPosts = function(){
+  this.createPosts = function(data){
+    debugger;
     var httpMethod = $http.post;
     var route = '/api/v1/goals';
     var data = {
