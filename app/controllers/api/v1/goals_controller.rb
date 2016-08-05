@@ -3,6 +3,7 @@ module Api
     class GoalsController < ApplicationController
       skip_before_filter :verify_authenticity_token
       respond_to :json
+
       def index
         @goals = Goal.all
         respond_to do |format|
@@ -17,7 +18,7 @@ module Api
       end
 
       def create
-        
+
         @note = Goal.new(todo_params)
         if @note.save
           respond_to do |format|
