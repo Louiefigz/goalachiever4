@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .service('GoalService', ['$http', '$q',  function($http, $q){
+  .service('PostService', ['$http', '$q',  function($http, $q){
 
 
     this.makeAjaxCall = function(httpMethod, route, data){
@@ -22,7 +22,7 @@ angular
 
     return deferred.promise;
   }
-  
+
 
   this.createPosts = function(){
     var httpMethod = $http.post;
