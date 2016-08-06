@@ -24,19 +24,22 @@ angular
   }
 
 
-  this.createPosts = function(data){
-    debugger;
+  this.createPosts = function(name, content, id, user_id){
+    // debugger;
+    var number = parseInt(id)
     var httpMethod = $http.post;
-    var route = '/api/v1/goals';
+    var route = '/api/v1/posts';
     var data = {
-      posts: {
-        name: postParams,
-        content: postParams
+      post: {
+        name: name,
+        content: content,
+        user_id: user_id,
+        goal_id: number
 
       }
     }
 
-    return this.makeAjaxCall(httpMethod, route);
+    return this.makeAjaxCall(httpMethod, route, data);
   };
 
 }]);

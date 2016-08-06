@@ -2,17 +2,21 @@ angular
   .module('app')
   .controller('PostsController', PostsController);
 
-function PostsController($scope, $state, PostService, $resource, $rootScope) {
+function PostsController($scope, $state, PostService, $resource, $rootScope, GoalService) {
 
 
-
+  var goalId = window.location.href.split('/')[window.location.href.split('/').length -1];
 
   this.addPost = function(data) {
-    debugger;
-    PostService.createPosts(data).then(function(resp){
+
+
+    PostService.createPosts(data.name, data.content, goalId).then(function(resp){
+      // GoalService.getGoals().then(function(resp){
+      //   ctrl.goals = resp.data.goals;
+      // });
       // ctrl.getGoals();
-      debugger;
-      ctrl.goals.push(resp.data.goal);
+      // debugger;
+      // ctrl.goal.posts.push(resp.data.goal);
       // debugger;
     });
   };
