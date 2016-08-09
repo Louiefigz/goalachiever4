@@ -17,7 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'responders'
 gem 'bower-rails'
 gem 'angular-rails-templates'
- gem "rails-assets-angular-devise"
+ # gem "rails-assets-angular-devise"
  gem 'active_model_serializers'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

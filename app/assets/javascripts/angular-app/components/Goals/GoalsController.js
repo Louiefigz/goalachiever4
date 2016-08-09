@@ -2,7 +2,7 @@ angular
   .module('app')
   .controller('GoalsController', GoalsController);
 
-function GoalsController(Goal, $scope, $state, Post, $resource, $rootScope, $location) {
+function GoalsController(Goal, $scope, $state, Post, $resource, $rootScope, $location, $q) {
 
   var ctrl = this;
 debugger;
@@ -16,6 +16,9 @@ debugger;
 debugger;
   var goalId = location.hash.split('/')[window.location.hash.split('/').length -1];
   ctrl.goal = Goal.get({ id: goalId });
+  // var deferred = $q.defer();
+
+
 
   ctrl.newPost = new Post();
 
