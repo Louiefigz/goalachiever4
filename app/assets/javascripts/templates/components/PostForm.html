@@ -1,0 +1,7 @@
+<h1>Add Post</h1>
+<form validate  ng-submit='ctrl.addPost(ctrl.newPost); post.post = "";'>
+
+ Title: <input type=”text” ng-model='ctrl.newPost.name'><br>
+ Content: <textarea type=”text” ng-model='ctrl.newPost.content'></textarea><br>
+ <input type='submit' value="Add Post"><br>
+</form>

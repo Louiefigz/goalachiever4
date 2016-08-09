@@ -3,7 +3,7 @@
   <li ng-repeat="goal in ctrl.goals" >
 
     <p>
-      <a ui-sref="home.goal({goalId: goal.id})">{{ goal.body }}</a>
+      <a ng-href="/#/goals/{{goal.id}}">{{ goal.body }}</a>
     </p>
   </li>
 

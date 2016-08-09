@@ -6,16 +6,23 @@
 
 <h1><center>{{ ctrl.goal.body }}</center></h1>
 
-
+<!--
 <h2>Blog Posts:</h2>
 <ul>
-<div ng-repeat="post in ctrl.goal.posts">
-  <h2>{{post.name}}</h2>
-  <p>{{post.content}}</p>
+  <div ng-repeat="post in ctrl.goal.posts">
 
+    <h2>{{post.name}}</h2>
+    <p>{{post.content}}</p>
+    <div ng-if="post.comments.length > 0">
+      <div ng-repeat="comment in post.comments">
+        <h4>Reply</h4>
+        <p>{{comment.content}}</p>
+      </div>
+
+  </div>
 </div>
 </ul>
 
 <div ng-controller="PostsController as post">
 <add-post-form></add-post-form>
-</div>
+</div> -->

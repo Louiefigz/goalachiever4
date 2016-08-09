@@ -2,7 +2,7 @@ function addPostForm() {
   return{
     controller: 'PostsController',
     restrict:'E',
-    templateUrl: 'components/addPostForm.html'
+    templateUrl: 'components/PostForm.html'
   }
 
 };
