@@ -8,13 +8,13 @@ function GoalsController(Goal, $scope, $state, Post, $resource, $rootScope, $loc
 
   if ($location.path() == '/goals') {
     return ctrl.goals = Goal.query();
-  }
+  };
 
 
   ctrl.newGoal = function(data){
     debugger;
     new Goal(data);
-  }
+  };
 
 
   var goalId = location.hash.split('/')[window.location.hash.split('/').length -1];

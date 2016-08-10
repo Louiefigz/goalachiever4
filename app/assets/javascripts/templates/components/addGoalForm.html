@@ -1,6 +1,8 @@
 <h1>Add Goal</h1>
-<form validate name="goalForm" ng-submit='ctrl.newGoal(ctrl.goal.body); ctrl.goal.body = "";'>
+<form validate name="goalForm" ng-submit='ctrl.newGoal(ctrl.goal); '>
  <label>Content</label>
  <input id="goalText" type=”text” ng-model='ctrl.goal.body'>
  <input type='submit' value="Add Goal">
 </form>
+
+<!-- ctrl.goal.body = ""; -->
