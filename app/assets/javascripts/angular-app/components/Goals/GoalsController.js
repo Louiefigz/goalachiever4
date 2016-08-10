@@ -6,17 +6,24 @@ function GoalsController(Goal, $scope, $state, Post, $resource, $rootScope, $loc
 
   var ctrl = this;
 
-debugger;
   if ($location.path() == '/goals') {
     return ctrl.goals = Goal.query();
   }
 
-  ctrl.newGoal = new Goal();
+
+  ctrl.newGoal = function(data){
+    debugger;
+    new Goal(data);
+  }
 
 
   var goalId = location.hash.split('/')[window.location.hash.split('/').length -1];
-  ctrl.goal = Goal.get({ id: goalId });
-  // var deferred = $q.defer();
+  ctrl.goal = Goal.query({ id: goalId });
+  // ctrl.goal.$promise.then(function(resp){
+  //   console.log(resp);
+  //   debugger;
+  // });
+
 
 
 

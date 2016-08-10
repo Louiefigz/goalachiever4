@@ -1,0 +1,7 @@
+<h1>Add a Sub Goal</h1>
+<form validate ng-submit='ctrl.newGoal(ctrl.goal.body); ctrl.goal.body = "";'>
+ <label>Content</label>
+ <input type=”text” ng-model='ctrl.goal.body'>
+ <input type=”text” ng-model='ctrl.goal.parent_id'>
+ <input type='submit' value="Add Goal">
+</form>
