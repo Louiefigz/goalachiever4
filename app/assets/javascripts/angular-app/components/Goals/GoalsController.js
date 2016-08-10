@@ -5,15 +5,15 @@ angular
 function GoalsController(Goal, $scope, $state, Post, $resource, $rootScope, $location, $q) {
 
   var ctrl = this;
-debugger;
 
-  // if ($location.path = 'goals') {
-  //   return ctrl.posts = Goal.query();
-  // }
+debugger;
+  if ($location.path() == '/goals') {
+    return ctrl.goals = Goal.query();
+  }
 
   ctrl.newGoal = new Goal();
 
-debugger;
+
   var goalId = location.hash.split('/')[window.location.hash.split('/').length -1];
   ctrl.goal = Goal.get({ id: goalId });
   // var deferred = $q.defer();
