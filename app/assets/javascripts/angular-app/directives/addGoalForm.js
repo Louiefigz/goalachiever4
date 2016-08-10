@@ -3,6 +3,7 @@ function addGoalForm() {
     controller: 'GoalsController',
     restrict:'E',
     templateUrl: 'components/addGoalForm.html'
+    // controllerAs: 'goalCtrl'
   }
 
 };

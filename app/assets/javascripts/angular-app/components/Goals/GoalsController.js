@@ -6,10 +6,6 @@ function GoalsController(Goal, $scope, $state, Post, $resource, $rootScope, $loc
 
   var ctrl = this;
 
-  if ($location.path() == '/goals') {
-    return ctrl.goals = Goal.query();
-  };
-
 
   ctrl.newGoal = function(data){
     debugger;
@@ -18,13 +14,18 @@ function GoalsController(Goal, $scope, $state, Post, $resource, $rootScope, $loc
 
 
   var goalId = location.hash.split('/')[window.location.hash.split('/').length -1];
+  debugger;
+  if (!isNaN(goalId)){
   ctrl.goal = Goal.query({ id: goalId });
+}
   // ctrl.goal.$promise.then(function(resp){
   //   console.log(resp);
   //   debugger;
   // });
 
-
+  if ($location.path() == '/goals') {
+    return ctrl.goals = Goal.query();
+  }
 
 
   ctrl.newPost = new Post();
